@@ -11,11 +11,11 @@ local function emit_disk_status()
     end)
 end
 
-gears.timer {
-  timeout   = 600,
-  call_now  = true,
-  autostart = true,
-  callback  = function()
-    emit_disk_status()
-  end
-}
+-- gears.timer {
+--   timeout   = 600,
+--   call_now  = true,
+--   autostart = true,
+--   callback  = function()
+--     emit_disk_status()
+--   end
+-- }
