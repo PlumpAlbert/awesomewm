@@ -42,15 +42,6 @@ awful.keyboard.append_global_keybindings({
 		group = "awesome",
 		on_press = awesome.restart,
 	}),
-	awful.key({
-		modifiers = { mod.super, mod.shift },
-		key = "q",
-		description = "quit awesome",
-		group = "awesome",
-		on_press = function()
-			awful.spawn("rofi_run -l")
-		end,
-	}),
 	--#region Screenshot
 	awful.key({
 		modifiers = {},
@@ -80,15 +71,15 @@ awful.keyboard.append_global_keybindings({
 		end,
 	}),
 	--#endregion
-	-- awful.key({
-	-- 	modifiers = { mod.super },
-	-- 	key = "x",
-	-- 	description = "powermenu",
-	-- 	group = "awesome",
-	-- 	on_press = function()
-	-- 		awesome.emit_signal("toggle::exit")
-	-- 	end,
-	-- }),
+	awful.key({
+		modifiers = { mod.super, mod.shift },
+		key = "q",
+		description = "powermenu",
+		group = "awesome",
+		on_press = function()
+			awesome.emit_signal("toggle::exit")
+		end,
+	}),
 	awful.key({
 		modifiers = { mod.super },
 		key = "Return",
