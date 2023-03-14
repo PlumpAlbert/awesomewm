@@ -129,7 +129,14 @@ theme.task_preview_widget_border_width = 0 -- The border width of the widget
 
 theme.systray_icon_spacing = dpi(8)
 
-theme.dont_swallow_classname_list = { "discord", "firefox", "Pcmanfm", "Google%-chrome", "Gimp" }
+theme.dont_swallow_classname_list = {
+	"discord",
+	"firefox",
+	"Pcmanfm",
+	"Google%-chrome",
+	"Gimp",
+	"TelegramDesktop",
+}
 theme.dont_swallow_filter_activated = true
 theme.playerctl_ignore = "Google%-chrome"
 theme.playerctl_player = { "Spotify", "vlc", "mpv", "%any", "firefox", "Google-chrome" }
