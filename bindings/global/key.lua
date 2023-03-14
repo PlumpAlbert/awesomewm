@@ -5,7 +5,6 @@ local menubar = require("menubar")
 local apps = require("config.apps")
 local mod = require("bindings.mod")
 local widgets = require("misc.menus")
-local appmenu = require("misc.bling").app_launcher
 --local scratches = require 'misc.bling'.scratchpads
 menubar.utils.terminal = apps.terminal
 
@@ -17,8 +16,8 @@ awful.keyboard.append_global_keybindings({
 		description = "open application launcher",
 		group = "awesome",
 		on_press = function()
-            awful.spawn('rofi -show combi')
-        end,
+			awful.spawn("rofi -show combi")
+		end,
 	}),
 	awful.key({
 		modifiers = { mod.super },
@@ -52,15 +51,44 @@ awful.keyboard.append_global_keybindings({
 			awful.spawn("rofi_run -l")
 		end,
 	}),
+	--#region Screenshot
 	awful.key({
-		modifiers = { mod.super },
-		key = "x",
-		description = "powermenu",
+		modifiers = {},
+		key = "Print",
+		description = "Screenshot",
 		group = "awesome",
 		on_press = function()
-			awesome.emit_signal("toggle::exit")
+			awful.spawn("$HOME/.local/scripts/screenshot")
 		end,
 	}),
+	awful.key({
+		modifiers = { mod.shift },
+		key = "Print",
+		description = "Screenshot selection",
+		group = "screenshot",
+		on_press = function()
+			awful.spawn("$HOME/.local/scripts/screenshot -s")
+		end,
+	}),
+	awful.key({
+		modifiers = { mod.alt },
+		key = "Print",
+		description = "Screenshot current window",
+		group = "screenshot",
+		on_press = function()
+			awful.spawn("$HOME/.local/scripts/screenshot -w")
+		end,
+	}),
+	--#endregion
+	-- awful.key({
+	-- 	modifiers = { mod.super },
+	-- 	key = "x",
+	-- 	description = "powermenu",
+	-- 	group = "awesome",
+	-- 	on_press = function()
+	-- 		awesome.emit_signal("toggle::exit")
+	-- 	end,
+	-- }),
 	awful.key({
 		modifiers = { mod.super },
 		key = "Return",
@@ -76,6 +104,7 @@ awful.keyboard.append_global_keybindings({
 		description = "run prompt",
 		group = "launcher",
 		on_press = function()
+			require("naughty").notify({ message = "hello" })
 			awful.screen.focused().promptbox:run()
 		end,
 	}),
@@ -95,15 +124,6 @@ awful.keyboard.append_global_keybindings({
 		group = "scratches",
 		on_press = function()
 			awesome.emit_signal("toggle::pfetchpad")
-		end,
-	}),
-	awful.key({
-		modifiers = { mod.super },
-		key = "z",
-		description = "scratchpad",
-		group = "scratches",
-		on_press = function()
-			awesome.emit_signal("toggle::ncmpcpppad")
 		end,
 	}),
 })
@@ -153,18 +173,18 @@ awful.keyboard.append_global_keybindings({
 			awful.client.focus.byidx(-1)
 		end,
 	}),
-	awful.key({
-		modifiers = { mod.super },
-		key = "Tab",
-		description = "go back",
-		group = "client",
-		on_press = function()
-			awful.client.focus.history.previous()
-			if client.focus then
-				client.focus:raise()
-			end
-		end,
-	}),
+	-- awful.key({
+	-- 	modifiers = { mod.super },
+	-- 	key = "Tab",
+	-- 	description = "go back",
+	-- 	group = "client",
+	-- 	on_press = function()
+	-- 		awful.client.focus.history.previous()
+	-- 		if client.focus then
+	-- 			client.focus:raise()
+	-- 		end
+	-- 	end,
+	-- }),
 	awful.key({
 		modifiers = { mod.super, mod.ctrl },
 		key = "j",
@@ -287,9 +307,16 @@ awful.keyboard.append_global_keybindings({
 			awful.layout.inc(-1)
 		end,
 	}),
-	awful.key({ mod.super }, "Tab", function()
-		awesome.emit_signal("bling::window_switcher::turn_on")
-	end, { description = "Window Switcher", group = "bling" }),
+	awful.key({
+		modifiers = { mod.super },
+		key = "Tab",
+		description = "window switcher",
+		group = "bling",
+		on_press = function()
+			require("naughty").notify({ message = "ere" })
+			awesome.emit_signal("bling::window_switcher::turn_on")
+		end,
+	}),
 })
 
 awful.keyboard.append_global_keybindings({
