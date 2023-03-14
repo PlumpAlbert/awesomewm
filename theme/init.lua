@@ -24,8 +24,8 @@ end
 
 theme.br = dpi(2)
 
--- theme.scrheight          = 1080
--- theme.scrwidth           = 1920
+theme.scrheight          = 1080
+theme.scrwidth           = 1920
 
 theme.wall = theme_path .. "wallpapers/" .. colors.wall
 
