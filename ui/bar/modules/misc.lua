@@ -9,7 +9,7 @@ M.launcher      = wibox.widget {
     {
       {
         font = beautiful.icofont .. " 16",
-        markup = "󰍉",
+        markup = "󰣇",
         valign = "center",
         align = "center",
         widget = wibox.widget.textbox,
