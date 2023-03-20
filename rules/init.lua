@@ -33,7 +33,9 @@ ruled.client.connect_signal("request::rules", function()
 				"Gpick",
 				"Kruler",
 				"Sxiv",
+				"Nsxiv",
 				"Wpa_gui",
+				"Nm-connection-editor",
 				"veromix",
 				"ncmpcpppad",
 				"xtightvncviewer",
@@ -56,13 +58,19 @@ ruled.client.connect_signal("request::rules", function()
 	-- Add titlebars to normal clients and dialogs
 	ruled.client.append_rule({
 		id = "titlebars",
-		rule_any = { type = { "normal", "dialog" } },
+		rule_any = {
+			type = { "dialog", "splash", "modal" },
+		},
 		properties = { titlebars_enabled = true },
 	})
 
-	-- Set Firefox to always map on the tag named '2' on screen 1.
-	-- ruled.client.append_rule {
-	--    rule       = {class = 'Firefox'},
-	--    properties = {screen = 1, tag = '2'}
-	-- }
+	ruled.client.append_rule({
+		rule = { class = "Spotify" },
+		properties = { screen = 2, tag = "1" },
+	})
+
+	ruled.client.append_rule({
+		rule = { role = "pop-up" },
+		properties = { screen = 2, tag = "2" },
+	})
 end)
