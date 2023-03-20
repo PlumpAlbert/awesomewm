@@ -25,18 +25,18 @@ local lockicon = "󰍁"
 
 local poweroffcommand = function()
 	if init_system == "openrc" then
-		awful.spawn.with_shell("sudo -A openrc-shutdown -p 0")
+		awful.spawn.easy_async_with_shell("pkexec openrc-shutdown -p 0")
 	else
-		awful.spawn.with_shell("sudo -A poweroff")
+		awful.spawn.easy_async_with_shell("pkexec poweroff")
 	end
 	awesome.emit_signal("hide::exit")
 end
 
 local rebootcommand = function()
 	if init_system == "openrc" then
-		awful.spawn.with_shell("sudo -A openrc-shutdown -r 0")
+		awful.spawn("pkexec openrc-shutdown -r 0")
 	else
-		awful.spawn.with_shell("sudo -A reboot")
+		awful.spawn.easy_async_with_shell("pkexec reboot")
 	end
 	awesome.emit_signal("hide::exit")
 end
@@ -44,7 +44,7 @@ end
 local suspendcommand = function()
 	awesome.emit_signal("hide::exit")
 	if init_system == "systemd" then
-		awful.spawn.with_shell("systemctl suspend")
+		awful.spawn.easy_async_with_shell("pkexec systemctl suspend")
 	end
 end
 
