@@ -49,7 +49,7 @@ awful.keyboard.append_global_keybindings({
 		description = "Screenshot",
 		group = "awesome",
 		on_press = function()
-			awful.spawn("$HOME/.local/scripts/screenshot")
+			awful.spawn("screenshot -d")
 		end,
 	}),
 	awful.key({
@@ -58,7 +58,7 @@ awful.keyboard.append_global_keybindings({
 		description = "Screenshot selection",
 		group = "screenshot",
 		on_press = function()
-			awful.spawn("$HOME/.local/scripts/screenshot -s")
+			awful.spawn("screenshot -s")
 		end,
 	}),
 	awful.key({
@@ -67,7 +67,7 @@ awful.keyboard.append_global_keybindings({
 		description = "Screenshot current window",
 		group = "screenshot",
 		on_press = function()
-			awful.spawn("$HOME/.local/scripts/screenshot -w")
+			awful.spawn("screenshot -w")
 		end,
 	}),
 	--#endregion
