@@ -1,6 +1,5 @@
 local theme = {}
 local xresources = require("beautiful.xresources")
-local awful = require("awful")
 local dpi = xresources.apply_dpi
 local gfs = require("gears.filesystem")
 local gears = require("gears")
@@ -16,9 +15,9 @@ theme.scheme = reader.readall("theme") or "gruvbox"
 local colors = require("theme.palettes." .. theme.scheme)
 
 theme.setTheme = function()
-	awful.spawn.with_shell("xrdb -remove")
-	awful.spawn.with_shell("xrdb -merge ~/.palettes/" .. colors.name .. " && kill -USR1 $(pidof st)")
-	awful.spawn.with_shell("cp ~/.config/rofi/colors/" .. colors.name .. ".rasi ~/.config/rofi/colors.rasi")
+	-- awful.spawn.with_shell("xrdb -remove")
+	-- awful.spawn.with_shell("xrdb -merge ~/.palettes/" .. colors.name .. " && kill -USR1 $(pidof st)")
+	-- awful.spawn.with_shell("cp ~/.config/rofi/colors/" .. colors.name .. ".rasi ~/.config/rofi/colors.rasi")
 	-- awful.spawn.with_shell("sed -i '2s/.*/gtk-theme-name=" .. colors.gtk .. "/g' ~/.config/gtk-3.0/settings.ini")
 end
 
