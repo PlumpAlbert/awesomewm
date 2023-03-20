@@ -11,7 +11,6 @@ local tasklist    = require("ui.bar.modules.tasklist")
 local status      = require("ui.bar.modules.status")
 local time        = require("ui.bar.modules.time")
 local music       = require("ui.bar.modules.music")
-local launcher    = require("ui.bar.modules.misc").launcher
 local powerbutton = require("ui.bar.modules.misc").powerbutton
 
 local barheight   = beautiful.scrheight
@@ -42,7 +41,6 @@ local function init(s)
         -- Left
         {
           layout = fixedlayout,
-          launcher,
           {
             {
               {
