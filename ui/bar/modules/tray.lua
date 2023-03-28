@@ -12,7 +12,7 @@ local is_vertical = beautiful.barDir == "left" or beautiful.barDir == "right"
 
 local togglertext = wibox.widget({
 	font = beautiful.icofont .. " 20",
-	text = "󰅁",
+	text = "󰅀",
 	valign = "center",
 	align = "center",
 	buttons = {
@@ -39,7 +39,7 @@ local systray = wibox.widget({
 	},
 	top = dpi(9),
 	bottom = dpi(9),
-	visible = false,
+	visible = true,
 	left = dpi(9),
 	right = dpi(9),
 	widget = wibox.container.margin,
