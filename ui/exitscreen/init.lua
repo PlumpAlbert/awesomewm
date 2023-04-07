@@ -27,7 +27,7 @@ local poweroffcommand = function()
 	if init_system == "openrc" then
 		awful.spawn.easy_async_with_shell("pkexec openrc-shutdown -p 0")
 	else
-		awful.spawn.easy_async_with_shell("pkexec poweroff")
+		awful.spawn.easy_async_with_shell("poweroff || pkexec poweroff")
 	end
 	awesome.emit_signal("hide::exit")
 end
@@ -36,7 +36,7 @@ local rebootcommand = function()
 	if init_system == "openrc" then
 		awful.spawn("pkexec openrc-shutdown -r 0")
 	else
-		awful.spawn.easy_async_with_shell("pkexec reboot")
+		awful.spawn.easy_async_with_shell("reboot || pkexec reboot")
 	end
 	awesome.emit_signal("hide::exit")
 end
