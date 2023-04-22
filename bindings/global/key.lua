@@ -28,6 +28,15 @@ awful.keyboard.append_global_keybindings({
 	}),
 	awful.key({
 		modifiers = { mod.super },
+		key = "F5",
+		description = "toggle day/night",
+		group = "awesome",
+		on_press = function()
+			awful.spawn.with_shell("darkman toggle")
+		end,
+	}),
+	awful.key({
+		modifiers = { mod.super },
 		key = "w",
 		description = "show main menu",
 		group = "awesome",
