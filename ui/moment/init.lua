@@ -11,7 +11,7 @@ awful.screen.connect_for_each_screen(function(s)
     type = "dock",
     shape = helpers.rrect(4),
     screen = s,
-    width = dpi(355),
+    width = dpi(375),
     height = 325,
     bg = beautiful.bg,
     ontop = true,
@@ -24,7 +24,7 @@ awful.screen.connect_for_each_screen(function(s)
       calendar,
       layout = wibox.layout.align.vertical,
     },
-    margins = dpi(15),
+    margins = dpi(10),
     widget = wibox.container.margin,
   }
   helpers.placeWidget(moment)
