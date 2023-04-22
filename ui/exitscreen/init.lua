@@ -49,6 +49,7 @@ local suspendcommand = function()
 end
 
 local exitcommand = function()
+	awful.spawn.with_shell("xfce4-session-logout")
 	awesome.quit()
 end
 
