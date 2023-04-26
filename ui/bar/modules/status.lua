@@ -11,41 +11,6 @@ local wifi = wibox.widget({
 	widget = wibox.widget.textbox,
 	valign = "center",
 	align = "center",
-	buttons = {
-		awful.button({}, 1, function()
-			awesome.emit_signal("toggle::dashboard")
-		end),
-	},
-})
-
-local timer = wibox.widget({
-	widget = wibox.container.arcchart,
-	max_value = 100,
-	min_value = 0,
-	value = 69,
-	thickness = dpi(3),
-	rounded_edge = true,
-	bg = beautiful.ok .. "4D",
-	colors = { beautiful.ok },
-	start_angle = math.pi + math.pi / 2,
-	forced_width = dpi(15),
-	forced_height = dpi(15),
-	buttons = {
-		awful.button({}, 1, function()
-			awful.spawn.easy_async_with_shell(
-				'pomodoro status -f "%!r"',
-				---@param stdout string
-				function(stdout)
-					if #stdout == 1 then
-						awful.spawn.with_shell("pomodoro start 25")
-						return
-					end
-					awful.spawn.with_shell("pomodoro cancel")
-					awesome.emit_signal("signal::pomodoro_time", 100)
-				end
-			)
-		end),
-	},
 })
 
 local l = nil
@@ -60,7 +25,6 @@ local status = wibox.widget({
 	{
 		{
 			{
-				timer,
 				wifi,
 				layout = l,
 				spacing = dpi(15),
@@ -73,6 +37,11 @@ local status = wibox.widget({
 	widget = wibox.container.background,
 	shape = helpers.rrect(2),
 	bg = beautiful.bg2 .. "cc",
+	buttons = {
+		awful.button({}, 1, function()
+			awesome.emit_signal("toggle::dashboard")
+		end),
+	},
 })
 
 awesome.connect_signal("signal::network", function(value)
@@ -81,10 +50,6 @@ awesome.connect_signal("signal::network", function(value)
 	else
 		wifi.markup = helpers.colorizeText("󰤮", beautiful.fg .. "99")
 	end
-end)
-
-awesome.connect_signal("signal::pomodoro_time", function(value)
-	timer.value = value
 end)
 
 return status
