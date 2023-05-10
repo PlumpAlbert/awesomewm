@@ -176,18 +176,18 @@ theme.window_switcher_name_focus_color = theme.pri -- The color of one title if 
 theme.window_switcher_icon_valign = "center" -- How to vertically align the one icon
 theme.window_switcher_icon_width = 20 --
 -- ICONS
-theme.icon_theme = "Reversal"
-local icon_dir = os.getenv("HOME") .. "/.icons/" .. theme.icon_theme .. "/apps/scalable/"
-theme.ic_icons = {
-	["st"] = icon_dir .. "terminal.svg",
-	["st-256color"] = icon_dir .. "terminal.svg",
-	["pfetchpad"] = icon_dir .. "terminal.svg",
-	["discord"] = icon_dir .. "discord.svg",
-	["firefox"] = icon_dir .. "firefox.svg",
-	["feh"] = icon_dir .. "image-viewer.svg",
-	["Spotify"] = icon_dir .. "spotify.svg",
-	["ncmpcpppad"] = icon_dir .. "deepin-music-player.svg",
-	["SimpleScreenRecorder"] = icon_dir .. "screenrecorder.svg",
-}
-theme.ic_dynamic_classes = { "st-256color" }
+-- theme.icon_theme = "Reversal"
+-- local icon_dir = os.getenv("HOME") .. "/.icons/" .. theme.icon_theme .. "/apps/scalable/"
+-- theme.ic_icons = {
+-- 	["st"] = icon_dir .. "terminal.svg",
+-- 	["st-256color"] = icon_dir .. "terminal.svg",
+-- 	["pfetchpad"] = icon_dir .. "terminal.svg",
+-- 	["discord"] = icon_dir .. "discord.svg",
+-- 	["firefox"] = icon_dir .. "firefox.svg",
+-- 	["feh"] = icon_dir .. "image-viewer.svg",
+-- 	["Spotify"] = icon_dir .. "spotify.svg",
+-- 	["ncmpcpppad"] = icon_dir .. "deepin-music-player.svg",
+-- 	["SimpleScreenRecorder"] = icon_dir .. "screenrecorder.svg",
+-- }
+-- theme.ic_dynamic_classes = { "st-256color" }
 return theme

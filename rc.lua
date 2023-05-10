@@ -5,7 +5,7 @@ local beautiful = require 'beautiful'
 beautiful.init('~/.config/awesome/theme/init.lua')
 beautiful.setTheme()
 
-require "modules.icon_customizer" { delay = 0 }
+-- require "modules.icon_customizer" { delay = 0 }
 
 -- load key and mouse bindings
 require 'bindings'
