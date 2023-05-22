@@ -126,6 +126,7 @@ theme.pause = gears.color.recolor_image(theme_path .. "icons/" .. "pause.svg", t
 
 theme.task_preview_widget_border_width = 0 -- The border width of the widget
 
+theme.bg_systray = theme.fg3
 theme.systray_icon_spacing = dpi(8)
 
 theme.dont_swallow_classname_list = {
@@ -176,7 +177,7 @@ theme.window_switcher_name_focus_color = theme.pri -- The color of one title if 
 theme.window_switcher_icon_valign = "center" -- How to vertically align the one icon
 theme.window_switcher_icon_width = 20 --
 -- ICONS
--- theme.icon_theme = "Reversal"
+theme.icon_theme = "Win11"
 -- local icon_dir = os.getenv("HOME") .. "/.icons/" .. theme.icon_theme .. "/apps/scalable/"
 -- theme.ic_icons = {
 -- 	["st"] = icon_dir .. "terminal.svg",

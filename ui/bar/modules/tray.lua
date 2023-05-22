@@ -31,7 +31,7 @@ else
 end
 -- TRAY
 
-local tray = wibox.widget.systray("hueta")
+local tray = wibox.widget.systray(false)
 tray:set_horizontal(not is_vertical)
 local systray = wibox.widget({
 	{
@@ -71,7 +71,8 @@ local widget = wibox.widget({
 			layout = l,
 		},
 		shape = helpers.rrect(2),
-		bg = beautiful.bg2 .. "cc",
+		bg = beautiful.fg3,
+		fg = beautiful.bg2,
 		widget = wibox.container.background,
 	},
 	margins = 0,
