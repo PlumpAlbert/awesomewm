@@ -1,5 +1,5 @@
 local _M = {
-  terminal = 'kitty',
+  terminal = 'alacritty',
   editor   = 'nvim',
 }
 
