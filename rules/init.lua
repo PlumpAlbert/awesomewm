@@ -71,6 +71,11 @@ ruled.client.connect_signal("request::rules", function()
 	})
 
 	ruled.client.append_rule({
+		rule = { instance = "crx_ahiigpfcghkbjfcibpojancebdfjmoop" },
+		properties = { floating = false },
+	})
+
+	ruled.client.append_rule({
 		rule = { role = "pop-up" },
 		properties = { screen = 2, tag = "2" },
 	})
